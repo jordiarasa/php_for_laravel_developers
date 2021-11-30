@@ -1,10 +1,12 @@
 <?php
 
+require './config.php';
 require './app/helper.php';
 require './app/Task.php';
 require './app/DBManag.php';
 
-$conDB = new DBManag();
+
+$conDB = new DBManag($config);
 
 $tasks = $conDB -> obtenirTotesLesTasques();
 
