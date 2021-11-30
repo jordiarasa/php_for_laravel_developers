@@ -12,7 +12,7 @@ class DBManag
         $dsn =  $config['database']['dbType'] .
                 ':host=' . $config['database']['host'] .
                 ';dbname=' . $config['database']['dbName'];
-        
+
         try {
             $this -> mbd = new PDO($dsn, $config['database']['user'], $config['database']['password']);
         }catch (\Exception $e)
