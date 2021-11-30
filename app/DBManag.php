@@ -9,22 +9,12 @@ class DBManag
 
     function __construct($config)
     {
-//        $usuario = 'debian-sys-maint';
-//        $contraseña = 'PYL9o31yB0voY1Ie';
-//        $dsn = 'mysql:host=localhost;dbname=phplaraveldevs';
-
-
-
-        $usuario = $config['database']['user'];
-        $contraseña = $config['database']['password'];
-        $databaseType = $config['database']['dbType'];
-        $host = $config['database']['host'];
-        $dbName = $config['database']['dbName'];
-        $dsn = "$databaseType:host=$host;dbname=$dbName";
-
-
+        $dsn =  $config['database']['dbType'] .
+                ':host=' . $config['database']['host'] .
+                ';dbname=' . $config['database']['dbName'];
+        
         try {
-            $this -> mbd = new PDO($dsn, $usuario, $contraseña);
+            $this -> mbd = new PDO($dsn, $config['database']['user'], $config['database']['password']);
         }catch (\Exception $e)
         {
             echo('Error de connexio a la base de dades');
