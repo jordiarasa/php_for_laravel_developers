@@ -17,5 +17,21 @@
 <?=$greeting;
 ?>
 </h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Completed</th>
+    </tr>
+    <?php foreach ($tasks as $item): ?>
+    <tr>
+        <td> <?= $item -> id; ?> </td>
+        <td> <?= $item -> title; ?> </td>
+        <td> <?= $item -> description; ?> </td>
+        <td> <?php echo $item -> completed; ?> </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
 </body>
 </html>
