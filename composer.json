@@ -1,0 +1,12 @@
+{
+    "name": "jordiarasa/php_for_laravel_developers",
+    "description": "bla bla",
+    "type": "project",
+    "autoload": {
+        "classmap":
+        [
+            "./"
+        ]
+    },
+    "require": {}
+}

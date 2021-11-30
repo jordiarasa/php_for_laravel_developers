@@ -1,15 +1,16 @@
 <?php
 
+use framework\Database\Database;
+
 require './config.php';
 require './app/helper.php';
-require './app/Task.php';
-require './app/DBManag.php';
 
+//require 'framework/Database/Database.php';
 
-$conDB = new DBManag($config);
+$database = new Database($config);
+//$tasks = $conDB -> obtenirTotesLesTasques();
 
-$tasks = $conDB -> obtenirTotesLesTasques();
-
+$tasks = $database -> selectAll('tasks');
 
 
 $greeting = "Hola " . $_GET["nom"] . " " . $_GET["Cognom"] . "!";
