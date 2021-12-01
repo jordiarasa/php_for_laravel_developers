@@ -2,25 +2,37 @@
 
 namespace framework\Database;
 use App\Models\Task;
+use framework\App;
 use PDO;
 
 class Database
 {
-    private $connection;
+    private static $connection;
 
-    /**
-     * @param $config
-     */
+
     public function __construct($config)
     {
-        $Connexio = new namespace\Connection($config);
-        $this -> connection =  $Connexio -> connectDB();
+        
+        $Conexio = Connection::make($config);
+
+        static::$connection = $Conexio -> connectDB();
+
+       // return self::$connection;
+    }
+
+    public static function make($config)
+    {
+        $Conexio = Connection::make($config);
+
+        static::$connection = $Conexio -> connectDB();
+
+        // return self::$connection;
     }
 
 
-    function selectAll($table)
+    public function selectAll($table)
     {
-        $consulta = $this -> connection -> prepare ('select * from ' . $table);
+        $consulta = static::$connection -> prepare ('select * from ' . $table);
 
         $consulta -> execute();
 

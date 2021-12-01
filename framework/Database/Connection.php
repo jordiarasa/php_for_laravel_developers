@@ -2,29 +2,30 @@
 
 namespace framework\Database;
 
+use framework\App;
 use PDO;
 
 class Connection
 {
-    private $config;
+    private static $config;
 
-    /**
-     * @param $config
-     */
-    public function __construct($config)
+
+
+    public static function make($config)
     {
-        $this->config = $config;
+        static::$config = $config;
+        return self::$config;
     }
 
 
-    function connectDB()
+    public static function connectDB()
     {
-        $dsn = $this -> config['database']['dbType'] .
-            ':host=' .  $this -> config['database']['host'] .
-            ';dbname='  .  $this -> config['database']['dbName'];
+        $dsn =  static::$config['dbType'] .
+            ':host=' .  static::$config['host'] .
+            ';dbname='  .  static::$config['dbName'];
 
         try {
-            return new PDO($dsn, $this -> config['database']['user'], $this -> config['database']['password']);
+            return new PDO($dsn, static::$config['user'], static::$config['password']);
         }catch (\Exception $e)
         {
             dd($e);
