@@ -20,7 +20,7 @@ class Database
 
     function selectAll($table)
     {
-        $consulta = $this -> connection -> prepare ('select * from' . $table);
+        $consulta = $this -> connection -> prepare ('select * from ' . $table);
 
         $consulta -> execute();
 

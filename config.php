@@ -3,7 +3,7 @@
 $config = [
     'database' => [
         'user' => 'debian-sys-maint',
-        'password' => 'PYL9o31yB0voY1Ie',
+        'password' => 'ntqDKtOF3DQwllhq',
         'dbType' => 'mysql',
         'host' => 'localhost',
         'dbName' => 'phplaraveldevs',
