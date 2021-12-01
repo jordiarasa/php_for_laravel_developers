@@ -7,32 +7,28 @@ use PDO;
 
 class Database
 {
-    private static $connection;
 
+    protected $pdo;
 
-    public function __construct($config)
+    public function __construct($pdo)
     {
-        
-        $Conexio = Connection::make($config);
-
-        static::$connection = $Conexio -> connectDB();
-
-       // return self::$connection;
+        $this -> pdo = $pdo;
     }
 
-    public static function make($config)
-    {
-        $Conexio = Connection::make($config);
-
-        static::$connection = $Conexio -> connectDB();
-
-        // return self::$connection;
-    }
+//    public static function make($config)
+//    {
+//        $Conexio = Connection::make($config);
+//
+//        static::$connection = $Conexio -> connectDB();
+//
+//        return self;
+//        // return self::$connection;
+//    }
 
 
     public function selectAll($table)
     {
-        $consulta = static::$connection -> prepare ('select * from ' . $table);
+        $consulta = $this -> pdo -> prepare ('select * from ' . $table);
 
         $consulta -> execute();
 

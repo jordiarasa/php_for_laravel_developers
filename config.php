@@ -3,7 +3,7 @@
 return [
     'database' => [
         'user' => 'debian-sys-maint',
-        'password' => 'ntqDKtOF3DQwllhq',
+        'password' => 'PYL9o31yB0voY1Ie',
         'dbType' => 'mysql',
         'host' => 'localhost',
         'dbName' => 'phplaraveldevs',
