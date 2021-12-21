@@ -10,5 +10,6 @@ $tasks = App::get('database') -> selectAll('tasks');
 //$database = new Database(App::get('config')['database']);
 //$tasks = $database -> selectAll('tasks');
 
-
 $greeting = greet();
+
+require 'resources/views/index.blade.php';
