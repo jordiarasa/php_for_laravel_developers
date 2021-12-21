@@ -21,13 +21,13 @@ class Route
     {
         if(!array_key_exists($uri, $this->routes))
         {
-            require 'resources/views/errors/404.php';
+            require '../resources/views/errors/404.php';
             return $this;
         }
 
         if(!file_exists($this->routes[$uri]))
         {
-            require require 'resources/views/errors/404.php';
+            require require '../resources/views/errors/404.php';
             return $this;
         }
 

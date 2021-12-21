@@ -12,8 +12,7 @@
     </div>
 </header>
 <main>
-    <header>
-        TODO Contact here
-    </header>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet, aperiam dolores eius enim et ipsam ipsum itaque iure maxime minus molestiae nobis numquam quas qui sed similique vel veniam?
 </main>
+
 <?php require '../resources/views/layout/footer.blade.php'; ?>
