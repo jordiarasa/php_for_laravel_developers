@@ -14,12 +14,13 @@ class Connection
             ':host=' .  $config['host'] .
             ';dbname='  .  $config['dbName'];
 
+        //phpinfo();
+
         try {
             return new PDO($dsn, $config['user'], $config['password']);
         }catch (\Exception $e)
         {
-            dd($e);
-            //echo('Error de connexio a la base de dades');
+            echo('Error de connexio a la base de dades: ' . $e -> getMessage());
         }
     }
 
