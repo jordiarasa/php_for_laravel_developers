@@ -3,7 +3,7 @@
 use framework\App;
 use framework\Database\Database;
 
-require './app/helper.php';
+
 
 
 $tasks = App::get('database') -> selectAll('tasks');
@@ -11,4 +11,4 @@ $tasks = App::get('database') -> selectAll('tasks');
 //$tasks = $database -> selectAll('tasks');
 
 
-$greeting = "Hola " . $_GET["nom"] . " " . $_GET["Cognom"] . "!";
+$greeting = greet();

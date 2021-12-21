@@ -6,6 +6,9 @@
         "classmap":
         [
             "./"
+        ],
+        "files": [
+            "./framework/helper.php"
         ]
     },
     "require": {
